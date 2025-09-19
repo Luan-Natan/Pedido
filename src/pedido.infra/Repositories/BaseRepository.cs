@@ -16,5 +16,33 @@ namespace pedido.infra.Repositories
         {
             return await _collection.Find(new BsonDocument()).ToListAsync();
         }
+
+        public async Task<List<T>> GetByIdAsync(string id)
+        {
+            FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id);
+            return await _collection.Find(filter).ToListAsync();
+        }
+
+        public async Task<T> AddAsync(T obj)
+        {
+            await _collection.InsertOneAsync(obj);
+            return obj;
+        }
+
+        public async Task<T> UpdateAsync(string id, T newObj)
+        {
+            FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id);
+
+            await _collection.ReplaceOneAsync(filter, newObj);
+            return newObj;
+        }
+
+
+        public async Task DeleteByIdAsync(string id)
+        {
+            FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id);
+            await _collection.DeleteOneAsync(filter);
+            return;
+        }
     }
 }

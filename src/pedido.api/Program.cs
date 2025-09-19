@@ -1,9 +1,4 @@
-using pedido.app.Services;
-using pedido.domain.Interfaces.Repositories;
-using pedido.domain.Interfaces.Services;
-using pedido.infra.Context;
-using pedido.infra.Repositories;
-
+using pedido.infra;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,12 +10,11 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
 
+builder.Services.ConfigureContexts();
 
-builder.Services.AddSingleton<PedidoContext>();
-builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.ConfigureRepositories();
 
+builder.Services.ConfigureServices();
 
 var app = builder.Build();
 

@@ -7,12 +7,26 @@ namespace pedido.domain.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public required string Id { get; set; }
+        public string? Id { get; set; }
 
         [BsonElement("nome")]
-        public required string Nome { get; set; }
+        public string Nome { get; set; }
 
         [BsonElement("email")]
         public string? Email { get; set; }
+
+        public Usuario(string? id, string nome, string? email)
+        {
+            Id = id;
+            Nome = nome;
+            Email = email;
+        }
+
+        public Usuario(string nome, string? email)
+        {
+            Id = string.Empty;
+            Nome = nome;
+            Email = email;
+        }
     }
 }
