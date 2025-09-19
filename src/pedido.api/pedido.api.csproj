@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../pedido.app/pedido.app.csproj" />
+    <ProjectReference Include="../pedido.apps/pedido.apps.csproj" />
     <ProjectReference Include="../pedido.infra/pedido.infra.csproj" />
   </ItemGroup>
 </Project>

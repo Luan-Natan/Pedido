@@ -1,4 +1,4 @@
-namespace pedido.app.DTOs
+namespace pedido.apps.DTOs
 {
     public class UsuarioDTO
     {

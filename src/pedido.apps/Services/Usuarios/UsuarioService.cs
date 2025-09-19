@@ -1,8 +1,8 @@
-using pedido.app.DTOs;
+using pedido.apps.DTOs;
 using pedido.domain.Interfaces.Repositories;
 using pedido.domain.Models;
 
-namespace pedido.app.Services.Usuarios
+namespace pedido.apps.Services.Usuarios
 {
     public class UsuarioService : IUsuarioService
     {

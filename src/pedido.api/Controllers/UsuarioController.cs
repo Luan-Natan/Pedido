@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using pedido.app.DTOs;
-using pedido.app.Services.Usuarios;
+using pedido.apps.DTOs;
+using pedido.apps.Services.Usuarios;
 
 namespace pedido.api.Controllers;
 

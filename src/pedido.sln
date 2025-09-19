@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pedido.api", "pedido.api\pedido.api.csproj", "{70CEE9A6-156A-4363-A679-C55FDE8CB775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pedido.app", "pedido.app\pedido.app.csproj", "{39DD46AC-9A7B-422C-B009-B4689E530304}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pedido.apps", "pedido.apps\pedido.apps.csproj", "{39DD46AC-9A7B-422C-B009-B4689E530304}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pedido.domain", "pedido.domain\pedido.domain.csproj", "{2C3BF78B-D17F-43B5-999F-7EDD7AA99B6C}"
 EndProject

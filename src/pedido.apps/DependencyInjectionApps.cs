@@ -1,9 +1,9 @@
 using Microsoft.Extensions.DependencyInjection;
-using pedido.app.Services.Usuarios;
+using pedido.apps.Services.Usuarios;
 
 namespace pedido.infra
 {
-    public static class DependencyInjectionApp
+    public static class DependencyInjectionApps
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
