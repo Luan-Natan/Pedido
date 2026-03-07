@@ -4,7 +4,7 @@ namespace pedido.domain.Interfaces.Repositories
     {
         Task<List<T>> GetAllAsync();
 
-        Task<List<T>> GetByIdAsync(string id);
+        Task<T> GetByIdAsync(string id);
 
         Task<T> AddAsync(T obj);
 

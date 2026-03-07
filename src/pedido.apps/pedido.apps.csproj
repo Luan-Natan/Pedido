@@ -7,10 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="../pedido.domain/pedido.domain.csproj" />
+    <ProjectReference Include="../pedido.infra/pedido.infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.0-rc.1.25451.107" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@ namespace pedido.apps.Services.Usuarios
     {
         Task<List<Usuario>> ListarTudoAsync();
 
-        Task<List<Usuario>> ListarPorIdAsync(string id);
+        Task<Usuario> ObterPorIdAsync(string id);
 
         Task<Usuario> AdicionarAsync(UsuarioDTO usuario);
 

@@ -13,6 +13,5 @@
 
   <ItemGroup>
     <ProjectReference Include="../pedido.apps/pedido.apps.csproj" />
-    <ProjectReference Include="../pedido.infra/pedido.infra.csproj" />
   </ItemGroup>
 </Project>

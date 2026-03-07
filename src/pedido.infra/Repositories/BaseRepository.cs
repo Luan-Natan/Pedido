@@ -17,10 +17,10 @@ namespace pedido.infra.Repositories
             return await _collection.Find(new BsonDocument()).ToListAsync();
         }
 
-        public async Task<List<T>> GetByIdAsync(string id)
+        public async Task<T> GetByIdAsync(string id)
         {
             FilterDefinition<T> filter = Builders<T>.Filter.Eq("Id", id);
-            return await _collection.Find(filter).ToListAsync();
+            return await _collection.Find(filter).FirstOrDefaultAsync();
         }
 
         public async Task<T> AddAsync(T obj)

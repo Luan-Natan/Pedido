@@ -24,7 +24,7 @@ public class UsuarioController : ControllerBase
     [HttpGet("{id}")]
     public async Task<IActionResult> ObterUsuarioPorId([FromRoute] string id)
     {
-        return Ok(await _usuarioService.ListarPorIdAsync(id));
+        return Ok(await _usuarioService.ObterPorIdAsync(id));
     }
 
     [HttpPost()]

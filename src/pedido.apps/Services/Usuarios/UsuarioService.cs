@@ -1,3 +1,4 @@
+using Mapster;
 using pedido.apps.DTOs;
 using pedido.domain.Interfaces.Repositories;
 using pedido.domain.Models;
@@ -17,7 +18,7 @@ namespace pedido.apps.Services.Usuarios
             return await _usuarioRepository.GetAllAsync();
         }
 
-        public async Task<List<Usuario>> ListarPorIdAsync(string id)
+        public async Task<Usuario> ObterPorIdAsync(string id)
         {
             return await _usuarioRepository.GetByIdAsync(id);
         }
@@ -31,7 +32,9 @@ namespace pedido.apps.Services.Usuarios
 
         public async Task<Usuario> AtualizarAsync(string id, UsuarioDTO usuarioDTO)
         {
-            var usuarioNovo = new Usuario(id, usuarioDTO.Nome, usuarioDTO.Email);
+            var usuarioAntigo = await _usuarioRepository.GetByIdAsync(id);
+
+            var usuarioNovo = usuarioDTO.Adapt(usuarioAntigo);
 
             return await _usuarioRepository.UpdateAsync(id, usuarioNovo);
         }
@@ -39,6 +42,7 @@ namespace pedido.apps.Services.Usuarios
         public async Task DeletarPorIdAsync(string id)
         {
             await _usuarioRepository.DeleteByIdAsync(id);
+            
             return;
         }
     }
